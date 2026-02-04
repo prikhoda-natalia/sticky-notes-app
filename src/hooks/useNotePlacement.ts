@@ -1,11 +1,28 @@
-import { useCallback } from 'react';
+/**
+ * Handles new note placement on the board via a pointer event.
+ *
+ * Behavior:
+ * - Converts the pointer position from client space to board space.
+ * - Centers the new note under the pointer.
+ * - Clamps the resulting geometry so the note is fully inside the board.
+ * - Commits the final board-space geometry immediately.
+ *
+ * This hook is intentionally stateless:
+ * - No pointer capture
+ * - No dragging lifecycle
+ * - No intermediate rendering
+ *
+ * Designed for "click / tap to place" interactions.
+ */
 
-import type { PointerEvent, RefObject } from 'react';
-import type { NotePlacementInit } from './types';
-import type { OnBoardGeometry } from '@/shared/types';
+import { useCallback } from "react";
 
-import { clampNoteOnBoardPosition, toClientGeometry } from '@/shared/geometry';
-import { NOTE_SIZE_TO_DIMENSIONS } from '@/shared/presets';
+import type { PointerEvent, RefObject } from "react";
+import type { NotePlacementInit } from "./types";
+import type { OnBoardGeometry } from "@/shared/types";
+
+import { clampNoteOnBoardPosition, toClientGeometry } from "@/shared/geometry";
+import { NOTE_SIZE_TO_DIMENSIONS } from "@/shared/presets";
 
 type UseNotePlacementArgs = {
   boardRef: RefObject<HTMLElement | null>;
@@ -34,7 +51,10 @@ export function useNotePlacement({ boardRef, onCommit }: UseNotePlacementArgs) {
         width,
         height,
       };
-      placedNoteGeometry = clampNoteOnBoardPosition(placedNoteGeometry, boardOnClient);
+      placedNoteGeometry = clampNoteOnBoardPosition(
+        placedNoteGeometry,
+        boardOnClient,
+      );
 
       onCommit(placedNoteGeometry);
     },

@@ -10,12 +10,10 @@
   user-select: none;
   touch-action: none;
 
-  /* important for smooth dragging */
   will-change: transform, width, height;
   transition: box-shadow 120ms ease;
 }
 
-/* Slight lift on hover (when idle) */
 .note:hover {
   box-shadow: 0 12px 28px rgba(16, 24, 40, 0.14);
 }

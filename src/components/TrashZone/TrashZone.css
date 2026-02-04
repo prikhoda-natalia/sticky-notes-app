@@ -18,7 +18,7 @@
   font-size: 13px;
 
   user-select: none;
-  pointer-events: none; /* important: don't interfere with board clicks */
+  pointer-events: none;
 
   transition:
     transform 120ms ease,
