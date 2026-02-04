@@ -1,0 +1,35 @@
+.trash {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+
+  width: 180px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+  background: #eef0f6;
+  border: 1px dashed #c7cddc;
+
+  color: #6b7280;
+  font-size: 13px;
+
+  user-select: none;
+  pointer-events: none; /* important: don't interfere with board clicks */
+
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.trash.active {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+  transform: scale(1.05);
+}

@@ -1,0 +1,106 @@
+.toolbar {
+  height: var(--toolbar-h, 56px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.toolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbarSpacer {
+  flex: 1;
+}
+
+.toolbarHint {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.button {
+  height: 36px;
+  padding: 0 12px;
+
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  box-shadow: var(--shadow-sm);
+
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #f9fafb;
+}
+
+.buttonPrimary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.buttonSmall {
+  min-width: 36px;
+  padding: 0;
+}
+
+.buttonActive {
+  background: #eef2ff;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.colorSwatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.colorSwatch:hover {
+  outline: 2px solid rgba(0, 0, 0, 0.15);
+  outline-offset: 1px;
+}
+
+.colorSwatchActive {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brandLogo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandLogoImage {
+  width: 30px;
+  height: 30px;
+}
+
+.brandAppName {
+  font-size: 16px;
+  color: var(--text);
+}
