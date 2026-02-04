@@ -1,0 +1,90 @@
+.note {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+
+  user-select: none;
+  touch-action: none;
+
+  will-change: transform, width, height;
+  transition: box-shadow 120ms ease;
+}
+
+.note:hover {
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.14);
+}
+
+.note:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+.note.isDragging {
+  transition: none;
+}
+
+.noteHeader {
+  height: 30px;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.06);
+  cursor: grab;
+}
+
+.noteHeader:active {
+  cursor: grabbing;
+}
+
+.noteHeader:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.noteGrip {
+  width: 16px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.noteBody {
+  flex: 1;
+  padding: 12px 14px;
+
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.75);
+
+  overflow: hidden;
+}
+
+.resizeHandle {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+
+  width: 14px;
+  height: 14px;
+
+  cursor: nwse-resize;
+  opacity: 0.4;
+
+  background:
+    linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.35) 50%),
+    linear-gradient(135deg, transparent 70%, rgba(0, 0, 0, 0.35) 70%);
+  background-size: 8px 8px;
+}
+
+.resizeHandle:hover {
+  opacity: 0.6;
+}
+
+.noteSelected {
+  outline: 2px solid rgba(79, 70, 229, 0.55);
+  outline-offset: 2px;
+}

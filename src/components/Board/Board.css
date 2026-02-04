@@ -1,0 +1,14 @@
+.board {
+  position: relative;
+  height: calc(100vh - 56px);
+  margin: 0 auto;
+  overflow: hidden;
+  background-image:
+    linear-gradient(to right, rgba(31, 41, 55, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 41, 55, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.boardPlacing {
+  cursor: crosshair;
+}
